@@ -1,21 +1,140 @@
-// ignore_for_file: avoid_classes_with_only_static_members
 import 'package:flutter/material.dart';
 
-class Constants {
-  // Colores del cubo y de la terminal
-  static const Color terminalText = Colors.greenAccent;
-  static const Color background = Colors.black;
+class Constantes {
+  // Configuración estética de la consola
+  static const Color colorTextoConsola = Colors.greenAccent;
+  static const Color colorFondo = Colors.black;
+  static const Color colorAlerta = Colors.amberAccent;
 
-  // Tu sistema de Lore
-  static const List<String> loreMessages = [
-    "Iniciando protocolo de análisis...",
-    "Conectando con base de datos de algoritmos...",
-    "Sincronización CFOP establecida.",
-    "Advertencia: Anomalía detectada en rotación R.",
-    "Calculando permutación de aristas...",
+  // BASE DE DATOS DE LORE (Normal y Raro)
+  // Aquí residen todos los secretos descubiertos mediante secuencias CFOP.
+  static const List<String> registroLore = [
+    // --- DATOS CURIOSOS ORIGINALES ---
+    "Dato curioso: Virge tiene (o tuvo, según cómo se mire) ocho hermanas y ni un solo hermano.",
+    "Dato curioso: Jessamine Noodle se enamoró de Eldoon cuando este, mediante entregas a domicilio, le llevó tazones de fideos mientras ella estaba enferma.",
+    "Dato curioso: Aproximadamente hay un total de 6 personajes olvidados que ya no son canónicos (NO DIRÉ CUÁLES SON).",
+    "Dato curioso: Libero es alérgico al polvo y al polen; esto último lo comparte con Pisciero.",
+    "Dato curioso: Aunque Hans sea el más aguerrido en combate, el más fuerte de los hermanos es Garret.",
+    "Dato curioso: Alexey cambia de posición para dormir unas 11 veces por noche.",
+    "Dato curioso: A Don Zaloog no le falta un ojo; usa un parche para verse más fiero (aunque él asegura que le ayuda a no ser emboscado en lugares oscuros).",
+    "Dato curioso: Los GrimAlKiNes fueron fundados por el padre de Racoon, un explorador que nombró mal a su hijo porque creyó que 'racoon' significaba cool.",
+    "Dato curioso: Capillín duerme con los ojos abiertos y con un arma a menos de un metro de distancia.",
+    "Dato curioso: Los Dekubaras más jóvenes le temen a los caracoles y algunos adoptan bichos palo como mascotas.",
+    "Dato curioso: Grog es el personaje con mayor musculatura en todo el cuerpo, mientras que Hans se salta el día de piernas.",
+    "Dato curioso: Ophran Animates es el atlantiano más longevo: vivió 432 años y murió en circunstancias desconocidas.",
+    "Dato curioso: Por costumbre, los dracónidos llaman 'padre' a los dragones primordiales.",
+    "Dato curioso: Durante la época del Muro (Muralia ahora se llama así porque yo lo digo), Lucas y sus discípulos eran los únicos magos.",
+    "Dato curioso: La fruta favorita de Hyalara es el mango; la de Nayen es el kiwi.",
+    "Dato curioso: San Jao practica el origami y hasta usa hojas de loto para sus creaciones.",
+    "Dato curioso: Baxter es tan solicitado en Alleos que tuvo que empezar a cobrar por hablar con él, solo para evitar la saturación de gente.",
+    "Dato curioso: Los Ciraxia no atacan a nadie durante el cumpleaños de su reina.",
+    "Dato curioso: Aragog, sus ascendientes y descendientes caen en la categoría de 'terror terrestre'.",
+    "Dato curioso: Los ligamentos de Cooper de una atlantiana hembra son más firmes que los humanos (esto incluye a los mestizos).",
+    "Dato curioso: Los goblins sin nombre tienen una esperanza de vida de apenas 15 años.",
+    "Dato curioso: Fanger es un lobo huargo con gigantismo. Esto no solo hace que coma el triple, sino que le permite ser usado como montura y blandir armas.",
+    "Dato curioso: Tauros Lee odia la piña, salvo en las bebidas alcohólicas que la incluyan.",
+    "Dato curioso: Lethalbo IV fue el único líder del clan Tauren que nunca mató a nadie.",
+    "Dato curioso: Jack consigue armas y armaduras para la monstroteca gracias a una extraña suerte (o mala suerte) que lo hace tropezar constantemente con cadáveres.",
+
+    // --- NUEVOS DATOS CURIOSOS AÑADIDOS ---
+    "Dato de Caum: Conoce más de 1000 bailes.",
+    "Dato de Cuathemoc: Además de haber sido explorador, guerrero, capitán, general, cantante, actor porno, soldado y emperador, fue médico de combate.",
+    "Dato de Gem-isis: A veces le pinta las uñas a Capricornius.",
+    "Dato de Escarpio: En una ocasión pasó tanto tiempo en una cueva que al salir y experimentar luz del sol casi se vuelve polvo.",
+    "Dato de Nadila: Es una de las mujeres con la cintura más fina.",
+    "Dato de Sergitarius: Algunos dicen que puede rotar su torso 360 grados debido a su maestría en tiro con arco a caballo.",
+    "Dato de Lucien: Unos de los hobbies de Lucien es farmear aura y mirar al este.",
+    "Dato de Aquaristo: Ha aprendido más de 40 habilidades inútiles, entre ellas dibujar un círculo perfecto.",
+    "Dato de Canceles: ¿Cómo ve con algo tapándole los ojos? Siempre cambia la respuesta, la de hoy es que su padre es daredevil.",
+    "Dato de North: Canónicamente North estaba a una caminata de una hora de donde hicieron la gran muralla (aka el muro de Berlín).",
+    "Dato de Arisco: La cicatriz que tiene en la cara se la hizo Lucas al conocerlo.",
+    "Dato de Leonidas: Su comida favorita es el filete en su punto y la que menos le gusta es la langosta.",
+    "Dato de Amber: No conoció a sus padres, no obstante, debido a su fisiología es descendiente de Azumarian.",
+    "Dato de Cuathemoc: Canónicamente puede bailar muy bien.",
+    "Dato cronológico: Nayen es mayor a Garret por 5 años, Garret es menor a Tauros Lee, y Tauros Lee nació en otra realidad, espera me perdí ¿Qué acertijo iba a decir?",
+    "Dato de Plomia: Pasa dos horas puliendo sus cuernos, y solo deja que los toquen sus amigos.",
+
+    // --- DATOS BIOLÓGICOS Y NARRATIVOS (De los documentos previos) ---
+    "Dato de Amber: Amber es de las pocas draconidos ferales, su lugar de nacimiento y padres es desconocido solo se sabe (gracias a su apariencia) que es descendiente de Azumarian.",
+    "Dato de Menae: Cuando diseño personajes agarro ideas o un concepto base, en el caso de los escorpiones oscuros se basan en diferentes tipos de abuso. Y en el caso de Menae es abuso sexual. La madre de Menae vendió a su hija a un prostíbulo escondido en la iglesia local. Durante las guerrillas, Don Zaloog sería quien rescataría a una Menae de apenas 17 años.",
+    "Dato de Escarpio: Pese a ser un nigromante, Escarpio no se siente atraído por cadáveres o podredumbre.",
+    "Dato de Piscinero: Piscinero ha manipulado animales marinos (principalmente delfines) y este NO se siente atraído a animales, emplea delfines por su inteligencia y por su tolerancia a comida y venenos.",
+    "Dato de Garret: Garret es alguien de mente humilde, sus deseos radican en tener una familia, hijos y que su boda se celebre en un lugar precioso, asistan sus hermanos, padre, tío y maestros.",
+    "Dato de Audramento: Audra posee distintas habilidades debido a nacer en 'El esqueleto de Noor'. Esto la volvió desde pequeña una 'paso libre' viajando desde la frontera salvaje hasta la cordillera windcastle, sobreviviendo gracias a una técnica kular.",
+    "Dato de Tauros-Lee: Lee bebía de pequeño en copas con residuos de plomo. Su tolerancia al alcohol llegó a tal punto que tuvo que gastar magia para evitar daños; su tolerancia es gigantesca y casi ilimitada si consume metales.",
+    "Dato de Leonidas: En la realidad de Pokemania, Leonidas sigue la siguiente ecuación para determinar qué tanta proteína consume: N de proteínas = pesototal/2.",
+    "Dato de Caum: Según la biología dekubara, el Rosh'ando (Padre frondoso) según la tradición puede tener 27 hijos. En el caso de Caum, fue concebido con un árbol de la espesura de brior y un hongo bailarín.",
+    "Dato de Canceles: Cuando Canceles era niño náufrago, Lucas disfrazado de mono fue atormentándolo, dejándolo ciego. Volo en su ceguera pudo ver en las mareas el flujo del tiempo y las probabilidades. Al terminar su entrenamiento, Lucas le devolvió la vista.",
+    "Dato de Fanger: Fanger dormía a los pies de Draven y Dartz. Con el tiempo se volvió tan grande y pesado que Draven tuvo que entrenar para levantarlo. Medía más de 1.60m de alto y 2m de largo.",
+    "Dato de Slimy Cow: Fue nombrada así por una anomalía que siendo virgen producía leche materna... produjo más tras dejar de serlo.",
+    "Dato de Racoon: Racoon es vegano completamente, no por ello obliga a su equipo a serlo, sobre todo Ky que es un carnívoro.",
+    "Dato de la antigua Wesnal: El nombre real de Tissandra Carnavelle es Tiessandra Carnavelle, parece que desprecia su origen pero no su casa.",
+    "Dato de Yessamin: Ella padece de astigmatismo y es hereditario; Gin lo heredará.",
+    "Dato de Bile: Pese a que Bile era de los miembros que menos participaba directamente en Facility 13, gracias a él la resistencia pudo comer.",
+    "Dato de Jim el erudito: Jim se siente muy cómodo con la ropa abrigada y capuchas, aunque afuera sea un horno, porque tienen más espacio.",
+    "Dato de Vin: Su sordera viene de una lesión en el tímpano de su oído izquierdo de niño, además padece de mareos al ir en vehículos.",
+    "Dato de Nadila: Ama los pangolines, las flautas, el sabor dulce y el color naranja. Ella no vivió la guerra hasta los eventos de crackdown.",
+    "Dato de Lucy: Entre los recuerdos reprimidos de Lucy están los de su cuerpo flotando en el vacío y su conciencia volviendo lentamente.",
+    "Dato de Zofie Zófido: La marca de cigarrillos que consume se llama 'Suicidio Lento'. Suele fumar unas tres cajetillas al día y es una fumadora post-coito.",
+    "Dato curioso femenino: La mujer humana más alta es Narwhal, ostentando una altura de 1.97 metros. La segunda más alta es Sela con 1.77 metros.",
+    "Dato de Facility 13: Un personaje muy olvidado era el campesino Héctor, un español que durante la infiltración en Castilla dejó la puerta abierta, permitiendo robar la corona azteca.",
+    "Dato de la familia Mento: Es la familia más extensa de todas. Hay unos catorce hermanastros y todos descienden del mismo padre, de diferentes madres.",
+    "Dato curioso de Comadreja: Es uno de los personajes LGTB+ de los munditos, siendo homosexual y teniendo un novio llamado Tejón.",
+    "Dato curioso de Nima Rodhani: Ama el estofado de conejo, su fascinación con comer la hizo inventar canales de agua urbanos en los Emiratos Suksigas.",
+    "Dato curioso de la casa TiroSeguro: Los hijos poseen hombros anchos, cuerpo flexible y la capacidad de rotar completamente los brazos por su entrenamiento con arco.",
+    "Dato curioso de Ryuma: Estaba en la isla Akatori ayudando al Daimio local a entrenar milicias cuando Yukan fue conquistada.",
+    "Dato de los príncipes norios: Los cuatro príncipes viajaron juntos para escoltar a un cartógrafo por las civilizaciones aliadas, reforzando su hermandad.",
+    "Dato de coito: Lucas tiene el body count más alto en hombres. En mujeres, una ancestra de Tissandra tuvo 27 amantes fuera de su matrimonio con el dragón Kael-Fhri.",
+    "Dato de los Buscatrufos: Se formaron cuando los Grimalkyn huyeron de la destrucción en Biqal y llegaron a Hullobos, donde el padre de Racoon los adoptó.",
+    "Dato del North Infernal: El North del Infierno era más grande porque anexó territorios de la Corona Pálida y partes de la Teocracia de Trowas que Zacarías robó en otra realidad.",
+
+    // --- ENTREVISTAS ---
+    "ENTREVISTA | @Garret, ¿quién te enseñó a forjar?\nGarret: Mi maestro en North fue LLeah Klar. De él saqué mi fuerza y conexión con los elementos sólidos. Luego fui a Grotte Cove, donde Kaelon Acero Traslúcido me enseñó el antiguo arte del forjado con lava.",
+    "ENTREVISTA | @Tauros-Lee, ¿quién te dio tu primer trago?\nTauros-Lee: Mi compadre, el mercader Garafola. Me ofreció un brebaje en una copa con demasiados agujeros. Se me derramaba todo encima hasta que me enseñó el truco.",
+    "ENTREVISTA | @Baxter, ¿cuál ha sido la familia más prestigiosa que te ha contratado?\nBaxter: La hermana del gobernador de Alleos, Acriza, me encomendó limpiar el Archivo Norio. Pasé días limpiando; hasta tenía Ratatas y Spinaraks viviendo en él.",
+    "ENTREVISTA | @Lucas, si pudieras cambiar algo de tu pasado, ¿qué sería?\nLucas: ¡No soy muy bueno recordando! Pero diría que fue aquella vez que me disfracé de abeja para seducir a la reina de Ciraxia. Era demasiado apretado en mi zona baja, y el aguijón pesaba más de la cuenta.",
+    "ENTREVISTA | @Zacarías, ¿cuál ha sido el combate más difícil que has librado?\nZacarías: La que casi acaba con North. La Corona Pálida, comandada por Sherlok Murik II, dirigió una legión de elefantes de guerra para destruir los muros norios. Por fortuna, mi hijo Hans y nuestros aliados respondimos a tiempo.",
+    "ENTREVISTA | @Nayen, ¿qué opinas de ti mismo realmente?\nNayen: Siempre digo: ¿El oro brilla? Así soy yo: brillante. Pero a diferencia del oro, yo soy irremplazable. Mientras tenga mi talento único, el dinero no parará de llegar a mí.",
+    "ENTREVISTA | @Fenela, ¿quién fue tu mejor polvo?\nFenela: ¿Polvos, dices? Cargar catalizadores es complicado, pero el presurio es mágico. Cuando aprendí a triturarlo en polvo, es mil veces más cómodo cargar un lingote de polvo de hierro que diez lingotes pesados.",
+    "ENTREVISTA | @Eldoon, ¿cuál es tu menú personal definitivo?\nEldoon: El Menú de las 5 Sales Reales de Yukan. Un día llegaron los príncipes Roji y Giro. Volé a la cocina y pinté las sales formando la bandera de Yukan... pero me quedé sin sal y fideos por dos días.",
+    "ENTREVISTA | @Garret, ¿cuál es tu mejor recuerdo con nosotros?\nGarret: Tras la caída del Titán, cuando aparecieron en Madra con Bile. Verlos me llenó por dentro, como si todo pudiera volver a ser como antes. Una parte de mí esperaba que estuvieran mis camaradas caídos...",
+    "ENTREVISTA | @Gem-isis, ¿quién te cae mejor de los tres?\nGem-isis: ¿Los tres? Tenemos tres categorías de magos en Koyam. Aunque no sé muy bien qué significan, la que más me gusta es la mía, la categoría morada.",
+    "ENTREVISTA | @Cuatemoc, ¿terminarás tu música?\nCuatemoc: La guerra me ha alejado de la música. A veces me gustaría volver el reloj atrás, en esa paz solo interrumpida por guerras puntuales. Pero venceré. No puedo caer, o todos caerán conmigo.",
+    "ENTREVISTA | @Caum, ¿cuál es el baile más peligroso que sepas?\nCaum: El Baile de las Diosas del Rocío y el Abono. Es un baile maldito que requiere una pareja. Bailarlo fuera de la espesura de Brior traerá consigo la desgracia de un antidios.",
+    "ENTREVISTA | @Canceles, ¿qué viste en nuestro futuro?\nCanceles: Cuando conocí a Silver, vi su pasado y me dejó sin dormir por días. Ver un ciclo de reencarnación me dejó sin sueños. Pero lo que sí sé, es que si el destino existe, él y sus amigos pueden ir contra este.",
+
+    // --- MENSAJES RAROS Y MITOLOGÍA PROFUNDA ---
+    "MENSAJE RARO: La ira del mar amó cada segundo de su combate en el faro azul.",
+    "MENSAJE RARO: Tissandra Carnavelle mide 1.57 cm aun así es lo suficientemente fuerte para pelear a puño limpio contra un taurem.",
+    "MENSAJE RARO: Lucas durante su pelea en la réplica del lugar conocido como 'las cuatro esquinas' usó un conjuro recién elaborado.",
+    "MENSAJE RARO: El reino de Zacarías en el infierno (nether) está combinado con el reino diezmado de Crisol.",
+    "MENSAJE RARO: Cuando H Cortez se acercaba a lo que él posteriormente descubriría como México, una luz lo envolvió a él y a su gente, lo demás es historia.",
+    "MENSAJE RARO: Wesnal es un continente, dividido en dos países: Glatux y Biqal.",
+    "MENSAJE RARO: Originalmente la idea para Yo Pájaro y Revali era que fue un niño en el que experimentaron para ser una bioarma a manos de los escorpiones oscuros. Solo diré 'terror aéreo'.",
+    "MENSAJE RARO: El balance de aire, agua y tierra es muy importante, es más la regla de tres es muy usada.",
+    "MENSAJE RARO: ¿Qué son los astros? Una combinación de magia residual de los dioses dragones y de héroes olvidados. Los astros no poseen evolución, pero los planetas sí pueden crecer más.",
+    "MENSAJE RARO: ¿Piedras del infinito en Inzania? NO. Ahora se llaman ecos de ONITSED ¿Que quién es ONITSED? HAZ TUS DEBERES.",
+    "MENSAJE RARO: ¿Te acuerdas de Iagu? ¿No? Eh bueno...... chao.",
+    "MENSAJE RARO: De ares a crackdown hay un lapso de tiempo de 7 años, 3 meses y 20 días. En este tiempo todo wesnal se puso patas arriba.",
+    "MENSAJE RARO: El manga (Ex Ore Ad Calum) es cannon en un 80%, lo que hay escrito son testimonios de testigos. ¿Pero qué es mentira?",
+    "MENSAJE RARO: Existieron 2 Lemurias, una que no conocen y otra que tiene atlantes zombies, la última impidió que el mar de todo Wesnal tenga paz.",
+    "MENSAJE RARO: En la línea temporal de Muralia existían gemelos: Hongo-tinto y Nieve-clara. Ella fundó Villa Fresquiñon para no sudar por las minas de hierro de su hermano en Villa Champiñon.",
+    "MENSAJE RARO: En el emirato suksiga un estándar de belleza masculina era un cuerpo aceitoso y brillante.",
+    "MENSAJE RARO: En la Atlántida era común que los atlantes exhibieran su abdomen y dejaran a desconocidos tocarlo, debido a una textura pulida genéticamente seductora.",
+    "MENSAJE RARO: En los ducados Deeswos la belleza femenina radicaba en pelos claros, ojos grises/verdes/azules, rostro ovalado y revelar el cuello hasta la clavícula.",
+    "MENSAJE RARO: En los reinados élficos el peinado era lo más llamativo. Usaban magia para moldear cabellos más grandes que sus cabezas, que a veces servían como varita mágica.",
+    "MENSAJE RARO: El Egipto de Crackdown es la unión de la línea realista y la mágica: legado de Paul pero con la arquitectura y poderes de la civilización de las arenas.",
+    "MENSAJE RARO: La dama de gris fue una elfa con teratofilia que se enamoró del terror terrestre Knirkob del millón de hilos. Juntos criaron a Nallocondor, Nontith y Nacochot.",
+    "MENSAJE RARO: Yukan SÍ peleó contra los escorpiones oscuros. Su shogun Jiokubo Kinzeru empleaba un Shikomizue estando enfermo. Eventualmente Yukan caería.",
+    "MENSAJE RARO: Recibir un sobre rosado élfico significa invitación a boda o asistente de cópula. La poligamia por contratos mágicos ('bodas tuberosas') es común para evitar la extinción de los elfos.",
+    "MENSAJE RARO: Los dekubaras tienen sangre de Brior, piel de corteza y micelio, una capa de arcilla pegajosa y tallos por venas. Son biológicamente un infante humano y un árbol.",
+    "MENSAJE RARO: Cada dracónido obtiene una cualidad única de su ancestro. Los descendientes de Phos-amon tienen gran busto y los de Azumarian grandes caderas por la cola.",
+    "MENSAJE RARO: Lucas fundó Koyam casi sin querer. Terra-formó la meseta dormido, despertó tras ser pinchado por Aquaristo, creó las casas y se fue a dormir otro día entero antes de desaparecer.",
+    "MENSAJE RARO: ¿De personajes aliados, quién nos odia más? En Mystholls: Nayen. En Crackdown: Giro. En Ares: Yindosh. En Muralia: Todo North. En Pokemania: TODOS. En Creeperdito: Los creepers.",
+    "MENSAJE RARO: Anubis es un antidios. En una línea temporal alternativa, Anubis poseyó a Hans, conquistó Egipto y causó un apocalipsis zombie que acorraló a los escorpiones oscuros y a Facility 13.",
+    "MENSAJE RARO: En tiempos de Ares, Hans fundó Madra junto a Bile como un hogar para los que no tienen hogar, reclutando a la escoria sobreviviente de Biqal.",
+    "MENSAJE RARO: En Lemuria, el tirano César Pontus Mariana mudó la capital allí tras un golpe de estado, solo para enfrentarse a los Akrabal de Nallacondor y Nantith, sellándolos en un laberinto submarino.",
+    "MENSAJE RARO: Los Faros solo son visibles para los contactados por los Ecos de Onitsed. En Crackdown, los protagonistas no podían verlos porque les faltaba la llave de reencarnación.",
+    "MENSAJE RARO: Tale fue fundado por Garret como un puerto comercial para su tripulación del Iron Den, prometiéndoles paz. Pero su tablón de anuncios seguiría ayudando a Glatux.",
   ];
-
-  static String obtenerMensajeAleatorio() {
-    return loreMessages[DateTime.now().millisecond % loreMessages.length];
-  }
 }
