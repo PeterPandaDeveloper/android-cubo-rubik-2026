@@ -1,3 +1,4 @@
+import 'dart:math'; // IMPORTANTE: Necesitamos importar esto para la aleatoriedad
 import 'package:flutter/material.dart';
 import 'algorithm.dart';
 
@@ -5,7 +6,6 @@ class Rubik {
   List<String> historial = [];
 
   // Representación del cubo por caras (9 stickers por cara)
-  // Índices: 0-2 (Top), 3-5 (Middle), 6-8 (Bottom)
   late Map<String, List<Color>> caras;
 
   Rubik() {
@@ -23,6 +23,62 @@ class Rubik {
       'L': List.filled(9, Colors.orange),
       'R': List.filled(9, Colors.red),
     };
+
+    // ¡AQUÍ ESTÁ LA SOLUCIÓN! Desarmamos el cubo nada más empezar
+    _mezclarCubo();
+  }
+
+  // --- MOTOR DE CAOS ---
+  void _mezclarCubo() {
+    final random = Random();
+    final movimientos = [
+      'U',
+      "U'",
+      'D',
+      "D'",
+      'R',
+      "R'",
+      'L',
+      "L'",
+      'F',
+      "F'",
+      'B',
+      "B'",
+    ];
+
+    // Damos 25 giros aleatorios directos a la matriz (sin pasar por el escáner)
+    for (int i = 0; i < 25; i++) {
+      String mov = movimientos[random.nextInt(movimientos.length)];
+
+      if (mov == 'U')
+        _rotarU();
+      else if (mov == "U'")
+        _rotarUPrima();
+      else if (mov == 'D')
+        _rotarD();
+      else if (mov == "D'")
+        _rotarDPrima();
+      else if (mov == 'R')
+        _rotarR();
+      else if (mov == "R'")
+        _rotarRPrima();
+      else if (mov == 'L')
+        _rotarL();
+      else if (mov == "L'")
+        _rotarLPrima();
+      else if (mov == 'F')
+        _rotarF();
+      else if (mov == "F'")
+        _rotarFPrima();
+      else if (mov == 'B')
+        _rotarB();
+      else if (mov == "B'")
+        _rotarBPrima();
+    }
+
+    // Vaciamos el historial para que el jugador empiece con la lista limpia
+    // y no se dispare el algoritmo CFOP accidentalmente por la mezcla
+    historial.clear();
   }
 
   Map<String, String> hacerMovimiento(String mov) {
@@ -56,7 +112,6 @@ class Rubik {
 
     return {
       "accion": "Ejecutando rotación: $mov",
-      // AQUÍ ESTÁ EL CAMBIO: Le enviamos las caras al analizador
       "alerta": Algorithm.analizarHistorial(historial, caras),
     };
   }
@@ -247,8 +302,9 @@ class Rubik {
     caras['D']![0] = caras['B']![8];
     caras['D']![3] = caras['B']![5];
     caras['D']![6] = caras['B']![2];
-    caras['B']![2] = temp[6];
-    caras['B']![5] = temp[3];
+    // ¡AQUÍ ESTABA EL ERROR! Ahora apunta a los índices correctos de la lista temporal.
+    caras['B']![2] = temp[2];
+    caras['B']![5] = temp[1];
     caras['B']![8] = temp[0];
   }
 

@@ -54,7 +54,7 @@ class Constantes {
     "Dato cronológico: Nayen es mayor a Garret por 5 años, Garret es menor a Tauros Lee, y Tauros Lee nació en otra realidad, espera me perdí ¿Qué acertijo iba a decir?",
     "Dato de Plomia: Pasa dos horas puliendo sus cuernos, y solo deja que los toquen sus amigos.",
 
-    // --- DATOS BIOLÓGICOS Y NARRATIVOS (De los documentos previos) ---
+    // --- DATOS BIOLÓGICOS Y NARRATIVOS ---
     "Dato de Amber: Amber es de las pocas draconidos ferales, su lugar de nacimiento y padres es desconocido solo se sabe (gracias a su apariencia) que es descendiente de Azumarian.",
     "Dato de Menae: Cuando diseño personajes agarro ideas o un concepto base, en el caso de los escorpiones oscuros se basan en diferentes tipos de abuso. Y en el caso de Menae es abuso sexual. La madre de Menae vendió a su hija a un prostíbulo escondido en la iglesia local. Durante las guerrillas, Don Zaloog sería quien rescataría a una Menae de apenas 17 años.",
     "Dato de Escarpio: Pese a ser un nigromante, Escarpio no se siente atraído por cadáveres o podredumbre.",
@@ -102,6 +102,8 @@ class Constantes {
     "ENTREVISTA | @Cuatemoc, ¿terminarás tu música?\nCuatemoc: La guerra me ha alejado de la música. A veces me gustaría volver el reloj atrás, en esa paz solo interrumpida por guerras puntuales. Pero venceré. No puedo caer, o todos caerán conmigo.",
     "ENTREVISTA | @Caum, ¿cuál es el baile más peligroso que sepas?\nCaum: El Baile de las Diosas del Rocío y el Abono. Es un baile maldito que requiere una pareja. Bailarlo fuera de la espesura de Brior traerá consigo la desgracia de un antidios.",
     "ENTREVISTA | @Canceles, ¿qué viste en nuestro futuro?\nCanceles: Cuando conocí a Silver, vi su pasado y me dejó sin dormir por días. Ver un ciclo de reencarnación me dejó sin sueños. Pero lo que sí sé, es que si el destino existe, él y sus amigos pueden ir contra este.",
+    "ENTREVISTA | @Shidon, ¡bro! Soy tu primo saludando desde el otro lado. ¿Cómo podemos devolver a los atlantes a la vida?\nShidon: ¡Ey, primo! ¡Qué onda! Uf, mira, la verdad es que eso de la magia de revivir me da dolor de cabeza de solo pensarlo. ¡Yo solo sigo las instrucciones facilitas para hacer lemurianos y ya está! Los que de verdad son unos genios con eso son el Rey Acro y su consejero Yomiel. ¡Tienen un plan increíble! Yo confío a muerte en que el Rey Acro logrará restaurar todo el imperio atlante, ¡ya lo verás! Solo hay que golpear duro a quien se interponga.",
+    "ENTREVISTA | @Lucien, ¿cuál es tu plato favorito?\nLucien: Budín de pan viejo con melaza oscura. En el orfanato a punto de colapsar donde me crie y luego trabajé limpiando pisos, las cocineras tiraban el pan duro de la semana en una bandeja, lo bañaban en melaza barata y lo dejaban toda la noche sobre las tuberías de las calderas de vapor del sótano. Ese olor a azúcar quemada y metal caliente... para mí, es la definición exacta de hogar. Incluso ahora, con toda la magia a mi disposición, me niego a recrearlo artificialmente; no porque no pueda, sino porque añoro volver a mi época para probarlo de verdad. Supongo que uno no extraña los lugares, sino los tiempos y a quienes éramos en ellos.",
 
     // --- MENSAJES RAROS Y MITOLOGÍA PROFUNDA ---
     "MENSAJE RARO: La ira del mar amó cada segundo de su combate en el faro azul.",
